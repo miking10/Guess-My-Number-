@@ -6,11 +6,12 @@ const hscore = document.querySelector('.highscore');
 const hiden = document.querySelector('.number');
 const body = document.querySelector('body');
 const button = document.querySelector('.again');
+const messageBox = document.getElementById('message-box');
+const title = document.getElementById('title');
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
-console.log(secretNumber);
 
 function checkGuess() {
   const guess = Number(document.querySelector('.guess').value);
@@ -22,9 +23,11 @@ function checkGuess() {
 
   if (guess === secretNumber) {
     message.innerHTML = '🎉 Correct Number!';
-    hiden.innerHTML = secretNumber;
-    body.classList.add('win');
+    title.innerHTML = 'Correct Number! 🎉';
 
+    hiden.innerHTML = secretNumber;
+    messageBox.classList.add('win');
+    console.log(messageBox);
     if (score > highscore) {
       highscore = score;
     }
@@ -37,6 +40,7 @@ function checkGuess() {
   }
   value.innerHTML = score;
   hscore.innerHTML = highscore;
+  document.getElementById('guessNum').value = '';
 }
 
 function again() {
@@ -47,7 +51,13 @@ function again() {
   value.innerHTML = score;
   hiden.innerHTML = '?';
   document.querySelector('.guess').value = '';
+  title.innerHTML = 'Guess My Number!';
 }
+document.getElementById('guessNum').addEventListener('keydown', event => {
+  if (event.key === 'Enter') {
+    checkGuess();
+  }
+});
 
 check.addEventListener('click', checkGuess);
 button.addEventListener('click', again);

@@ -139,18 +139,14 @@ header {
 
 header h1 {
   margin-top: 35px;
-
-  font-size: clamp(42px, 6vw, 72px);
-  font-weight: 800;
-  letter-spacing: -2px;
-}
-
-header h1 span {
-  background: linear-gradient(90deg, #c084fc, #818cf8, #60a5fa);
-
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #c084fc, #818cf8, #60a5fa);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: -2px;
 }
 
 .subtitle {
@@ -408,11 +404,11 @@ main {
 
   color: var(--text-muted);
 
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .message-box span {
-  font-size: 22px;
+  font-size: 27px;
 }
 
 .message {
@@ -572,7 +568,7 @@ main {
   .message-box {
     padding: 15px;
 
-    font-size: 13px;
+    font-size: 17px;
   }
 }
 
