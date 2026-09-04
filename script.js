@@ -9,7 +9,7 @@ const button = document.querySelector('.again');
 const messageBox = document.getElementById('message-box');
 const title = document.getElementById('title');
 
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 100) + 1;
 let score = 20;
 let highscore = 0;
 
